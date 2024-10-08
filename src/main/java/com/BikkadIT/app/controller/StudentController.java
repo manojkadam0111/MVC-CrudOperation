@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -39,5 +40,20 @@ public class StudentController {
 		mav.setViewName("allStudents");
 		return mav;
 		
+	}
+	
+	@GetMapping("/deleteAll")
+	public String deleteAllData(Model model) {
+		boolean all = studentServiceI.deleteAll();
+		if(all) {
+			String msg = "Record deleted Successfully";
+			model.addAttribute("delete", msg);
+		return "page1";
+		
+		}else {
+			String msg = "Record not deleted...";
+			model.addAttribute("notDelete", msg);
+		return "page1";
+		}
 	}
 }

@@ -9,4 +9,6 @@ public interface StudentServiceI {
 	public Student saveStu(Student stu);
 	
 	public List<Student> getAllStudent();
+	
+	public boolean deleteAll();
 }

@@ -25,4 +25,15 @@ public class StudentServiceImpl implements StudentServiceI {
 		return all;
 	}
 
+	@Override
+	public boolean deleteAll() {
+		List<Student> all = (List<Student>) studentRepository.findAll();
+		if(all.isEmpty()) {
+			return false;
+		}else {
+			studentRepository.deleteAll();
+			return true;
+		}
+	}
+
 }
