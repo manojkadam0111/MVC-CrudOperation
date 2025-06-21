@@ -29,7 +29,17 @@ public class StudentController {
 		mav.addObject("STU", saveStu);
 		mav.setViewName("Reg");
 		return mav;
-		
+
+	}
+
+	@GetMapping("/saveStu")
+	public ModelAndView saveStuds(Student stu) {
+		Student saveStu = studentServiceI.saveStu(stu);
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("STU", saveStu);
+		mav.setViewName("Reg");
+		return mav;
+
 	}
 	@GetMapping("/students")
 	public ModelAndView getStudents() {
