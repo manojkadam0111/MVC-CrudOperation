@@ -16,7 +16,22 @@ public class StudentController {
 
 	@Autowired
 	private StudentServiceI studentServiceI;
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//This is demo
 	@GetMapping("/welcomeToReg")
 	public String preReg() {
 		return "welcome";
